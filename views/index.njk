@@ -4,8 +4,10 @@
     </head>
 
     <body>
-        {% for nome in nomes %}
-            Bem vindo ao sistema, {{ nome }} <br>
-        {% endfor %}
+        <form action="" method="POST">
+            <input type="text" name="username" />
+            <input type="password" name="password" />
+            <button type="submit" value="Logar" />
+        </form>
     </body>
 </html>
