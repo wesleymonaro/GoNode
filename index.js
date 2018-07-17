@@ -1,29 +1,20 @@
 const express = require('express');
+const nunjucks = require('nunjucks');
+const path = require('path');
+
 const app = express();
 
-//middleware global
-// app.use((req, res, next) => {
-//     console.log('Acessou');
-//     next();
-// })
-
-//custom middleware
-const userMiddleware = (req, res, next) => {
-    console.log('Acessou');
-    next();
-}
-
-app.get('/', (req, res, next) => {
-    res.send('Hello World');
-    next(); //chama o próximo middleware/rota
+nunjucks.configure('views', {
+    autoescape: true,
+    express: app
 })
 
-app.get('/teste', (req, res) => {
-    res.send('Hello World');
+app.set('view engine', 'njk');
+app.set('views', path.join(__dirname, 'views'));
+
+app.get('/', (req, res) => {
+    res.render('index', { nomes: ['Wesley', 'Sheila', 'Andrey'] })
 })
 
-app.get('/user', userMiddleware, (req, res) => {
-    res.send('Usuário Wesley');
-})
 
 app.listen(3000);
