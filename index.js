@@ -19,9 +19,10 @@ app.get('/', (req, res) => {
     res.render('index')
 })
 
-app.post('auth', (req, res) => {
-    console.log(req.body);
-    res.send(`Você logou com o usuário ${req.body.username}`);
+app.post('/auth', (req, res) => {
+    const { username, password } = req.body;
+
+    res.send(`Você logou com o usuário ${username} e senha ${password}`);
 
 })
 
