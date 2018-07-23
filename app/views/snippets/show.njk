@@ -1,0 +1,22 @@
+{% extends 'layouts/default.njk' %}
+
+{% block body %}
+  <div class="wrapper">
+    {% include 'partials/nav.njk' %}
+    {% include 'partials/snippets.njk' %}
+
+    <section class="snippet-content">
+      <div class="actions">
+        <a href="#" class="edit">Editar</a>
+
+        <form method="POST" action="">
+          <button type="submit">Remover</button>
+        </form>
+      </div>
+
+      <h1>{{ currentSnippet.title }}</h1>
+      <div class="content">{{ currentSnippet.formattedContent | safe }}</div>
+    </section>
+
+  </div>
+{% endblock %}
