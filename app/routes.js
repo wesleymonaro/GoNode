@@ -30,6 +30,7 @@ routes.use('/app', authMiddleware);
 routes.get('/app/dashboard', dashboardController.index);
 
 // Categoria
+routes.get('/app/categories/:id', categoryController.show);
 routes.post('/app/categories/create', categoryController.store);
 
 routes.use((req, res) => res.render('errors/404'));
