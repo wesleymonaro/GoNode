@@ -2,8 +2,9 @@ const express = require('express');
 
 const routes = express.Router();
 
-const userController = require('./controllers/userController');
+const authController = require('./controllers/authController');
 
-routes.get('/', userController.index);
+routes.get('/', authController.signin);
+routes.get('/signup', authController.signup);
 
 module.exports = routes;
