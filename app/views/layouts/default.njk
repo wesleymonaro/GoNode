@@ -18,7 +18,9 @@
 
   <body>
 
-  {% block body %} {% endblock %}
+    {% include 'partials/flash.njk' %}
+
+    {% block body %} {% endblock %}
 
   </body>
 </html>
