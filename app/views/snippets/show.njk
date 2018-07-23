@@ -9,7 +9,7 @@
       <div class="actions">
         <a href="#" data-modal-open="#edit-snippet" class="edit">Editar</a>
 
-        <form method="POST" action="">
+        <form method="POST" action="/app/categories/{{activeCategory}}/snippets/{{ currentSnippet.id}}?_method=DELETE">
           <button type="submit">Remover</button>
         </form>
       </div>
