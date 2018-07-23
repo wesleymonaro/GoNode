@@ -1,5 +1,18 @@
+const { Category, Snippet } = require('../models');
+
 module.exports = {
-  index(req, res) {
-    return res.render('dashboard/index');
+  async index(req, res, next) {
+    try {
+      const categories = await Category.findAll({
+        include: [Snippet],
+        where: {
+          UserId: req.session.user.id,
+        },
+      });
+
+      return res.render('dashboard/index', { categories });
+    } catch (error) {
+      return next(error);
+    }
   },
 };
