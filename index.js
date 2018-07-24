@@ -26,4 +26,4 @@ app.use(methodOverride('_method'));
 
 app.use('/', routes);
 
-app.listen(3000);
+app.listen(process.env.PORT);
