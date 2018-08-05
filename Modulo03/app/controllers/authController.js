@@ -17,7 +17,7 @@ module.exports = {
         return res.status(401).json({ error: 'Invalid password' });
       }
 
-      return res.json(user);
+      return res.json({ user, token: user.generateToken() });
     } catch (error) {
       return next(error);
     }
@@ -32,7 +32,7 @@ module.exports = {
 
       const user = await User.create(req.body);
 
-      return res.json(user);
+      return res.json({ user, token: user.generateToken() });
     } catch (error) {
       return next(error);
     }
