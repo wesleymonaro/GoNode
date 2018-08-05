@@ -15,6 +15,9 @@ routes.post('/signin', controllers.authController.signin);
 // WITH AUTH
 routes.use(authMiddleware);
 
+// USERS
+routes.put('/users', controllers.userController.update);
+
 // Tweets
 routes.post('/tweets', controllers.tweetController.create);
 routes.delete('/tweets/:id', controllers.tweetController.destroy);
