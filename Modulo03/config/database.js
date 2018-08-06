@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  url: 'mongodb://localhost/mod03gonode',
+  url: process.env.DATABASE_URL,
 
   modelsPath: path.resolve('app', 'models'),
 };
