@@ -18,6 +18,7 @@ routes.use(authMiddleware);
 // USERS
 routes.get('/users/me', controllers.userController.me);
 routes.put('/users', controllers.userController.update);
+routes.get('/feed', controllers.userController.feed);
 
 // FOLLOW
 routes.post('/follow/:id', controllers.followController.create);
