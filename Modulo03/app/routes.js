@@ -16,6 +16,7 @@ routes.post('/signin', controllers.authController.signin);
 routes.use(authMiddleware);
 
 // USERS
+routes.get('/users/me', controllers.userController.me);
 routes.put('/users', controllers.userController.update);
 
 // FOLLOW
