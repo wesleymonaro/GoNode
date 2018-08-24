@@ -26,7 +26,9 @@
     "@adonisjs/ignitor": "^2.0.6",
     "@adonisjs/lucid": "^5.0.4",
     "@adonisjs/mail": "^3.0.8",
+    "@adonisjs/redis": "^2.0.7",
     "@adonisjs/validator": "^5.0.3",
+    "adonis-kue": "^5.0.1",
     "crypto": "^1.0.1",
     "moment": "^2.22.2",
     "mysql": "^2.16.0"
