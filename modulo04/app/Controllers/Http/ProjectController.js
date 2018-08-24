@@ -9,8 +9,12 @@ class ProjectController {
    * Show a list of all projects.
    * GET projects
    */
-  async index ({ request, response, view }) {
-    const projects = await Project.query().with('user').fetch()
+  async index ({ request }) {
+    const { page } = request.get()
+
+    const projects = await Project.query()
+      .with('user')
+      .paginate(page)
 
     return projects
   }
