@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "NODE_ENV=test mocha __tests__/**/*.test.js --exit",
+    "test": "NODE_ENV=test nyc mocha __tests__/**/*.test.js --exit",
     "start": "nodemon index.js"
   },
   "keywords": [],
@@ -22,6 +22,7 @@
     "mocha": "^5.2.0",
     "node-mocks-http": "^1.7.1",
     "nodemon": "^1.18.3",
+    "nyc": "^13.0.1",
     "sinon": "^6.3.5"
   },
   "dependencies": {
@@ -36,5 +37,13 @@
     "nodemailer": "^4.6.7",
     "raven": "^2.6.3",
     "require-dir": "^1.0.0"
+  },
+  "nyc": {
+    "reporter": [
+      "lcov",
+      "text-summary",
+      "html"
+    ],
+    "report-dir": "./__tests__/coverage"
   }
 }
