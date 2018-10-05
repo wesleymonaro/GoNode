@@ -20,7 +20,8 @@
     "factory-girl": "^5.0.2",
     "faker": "^4.1.0",
     "mocha": "^5.2.0",
-    "nodemon": "^1.18.3"
+    "nodemon": "^1.18.3",
+    "sinon": "^6.3.5"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
