@@ -20,6 +20,7 @@
     "factory-girl": "^5.0.2",
     "faker": "^4.1.0",
     "mocha": "^5.2.0",
+    "node-mocks-http": "^1.7.1",
     "nodemon": "^1.18.3",
     "sinon": "^6.3.5"
   },
